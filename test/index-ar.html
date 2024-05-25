@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وصل فين - الصفحة الرئيسية</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+integrity="sha512-...your-hash-code..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
+<link rel="stylesheet" href="Assets/style/Home.css">
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <!-- الأعلام للغات -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index-ar.html"><img src="egypt_flag.png" alt="Egypt Flag" style="width: 30px; height: 30px;"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><img src="usa_flag.png" alt="USA Flag" style="width: 30px; height: 30px;"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> تسجيل الدخول / تسجيل الخروج</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-envelope"></i> اتصل بنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> حول</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+                        </li>
+                    </ul>
+                    <!-- إضافة اللوجو هنا -->
+                    <a class="navbar-brand" href="#">
+                        <img src="LOGO.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- قسم البطل -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>مرحبًا بك في وصل فين</h1>
+            <p>وجهتك النهائية لتتبع وسائل النقل، وشراء التذاكر، وإدارة المواعيد.</p>
+            <a href="#" class="cta-button">ابدأ الآن</a>
+        </div>
+    </section>
+    
+    <!-- قسم الميزات -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature">
+                        <i class="fas fa-map-marker-alt fa-3x mb-3"></i>
+                        <h3>تتبع الوقت الحقيقي</h3>
+                        <p>تتبع وسائل النقل الخاصة بك في الوقت الحقيقي لتبقى محدثًا على رحلتك.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature">
+                        <i class="fas fa-ticket-alt fa-3x mb-3"></i>
+                        <h3>شراء التذاكر بسهولة</h3>
+                        <p>شراء التذاكر بسهولة لمختلف خدمات النقل.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature">
+                        <i class="far fa-clock fa-3x mb-3"></i>
+                        <h3>إدارة المواعيد</h3>
+                        <p>إدارة مواعيد النقل الخاصة بك بشكل مريح وسهل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>اتصل بنا</h2>
+            <p>هل لديك أسئلة أو تعليقات؟ لا تتردد في التواصل معنا.</p>
+            <form class="form-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="اسمك">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="رسالتك"></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 وصل في. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-...your-hash-code..." crossorigin="anonymous"></script>
+</body>
+
+</html>

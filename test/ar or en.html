@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Translator</title>
+</head>
+<body>
+    <button onclick="translateHTML()">Translate</button>
+    <div id="translatedContent"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://translate.googleapis.com/translate_static/js/element/main.js"></script>
+    <script>
+        function translateHTML() {
+            // Load HTML content from file or directly from the HTML content
+            var htmlContent = `
+                <html>
+                <body>
+                    <h1>Hello, World!</h1>
+                    <p>This is a sample HTML file for translation.</p>
+                    <p>Translate me into Arabic!</p>
+                </body>
+                </html>
+            `;
+
+            // Translate HTML content from English to Arabic
+            google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'translatedContent');
+
+            // Extract text from translated HTML content
+            var translatedText = $('#translatedContent').text();
+
+            // Display the translated HTML content
+            $('#translatedContent').html(translatedText);
+        }
+    </script>
+</body>
+</html>

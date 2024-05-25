@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../Assets/image/LOGO.png">
+    <title>Register</title>
+
+    <!-- Bootstrap library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Font Awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-...your-hash-code..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="../Assets/style/main.css">
+    <link rel="stylesheet" href="../Assets/style/authentication.css">
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Registration form -->
+        <form id="mainform">
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <!-- User icon -->
+                    <i class="fas fa-user-plus fa-3x"></i>
+                </div>
+            </div>
+
+            <!-- Form title -->
+            <h2 class="mb-4 text-center">Create account</h2>
+
+            <!-- Profile picture upload section -->
+            <div class="img">
+                <div class="img-box">
+                    <img id="img" src="" alt="Your profile picture" />
+                </div>
+                <div class="upload">
+                    <label id="title" for="imageFileInput">Upload your Photo</label>
+                    <input type="file" id="imageFileInput" accept="image/*" />
+                </div>
+            </div>
+
+            <!-- Username input field -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="usernameInp" placeholder="Username" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email input field -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control" id="emailInp" placeholder="Email" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password input field with strength indicator -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" id="passwordInp" placeholder="Password" required>
+                            <div id="passwordStrength" class="mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirm password input field -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" id="confirmPasswordInp" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Create a new account
+                    </button>
+                </div>
+            </div>
+
+            <!-- Social login options -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="social-icons mt-3">
+                        <i class="fab fa-google" id="google-btn-login"></i>
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification area -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="notification"></div>
+                </div>
+            </div>
+
+            <!-- Link to login page -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="loginLink" class="mt-3">
+                        Already have an account? <a href="index.html" class="text-decoration-none">Login</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- Password strength checker library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha384-bcFsxZ29RbhqZZ3oV5q7xVl3b1uj+y5/juJFWYkQluq1FUMKNSJg2W1UCmU2pp0G" crossorigin="anonymous"></script>
+
+    <!-- Firebase setup and authentication scripts -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+        import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5iRLRnjyklJ5QFj5ZwOtjP5XGetrCKgo",
+            authDomain: "wasal-feen.firebaseapp.com",
+            databaseURL: "https://wasal-feen-default-rtdb.firebaseio.com",
+            projectId: "wasal-feen",
+            storageBucket: "wasal-feen.appspot.com",
+            messagingSenderId: "41028489249",
+            appId: "1:41028489249:web:dc58a7030c374a35359360",
+            measurementId: "G-5W8K7XTEZ2"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Password strength indicator
+        let PasswordInp = document.getElementById("passwordInp");
+        let PasswordStrength = document.getElementById("passwordStrength");
+
+        PasswordInp.addEventListener('input', function () {
+            let result = zxcvbn(PasswordInp.value);
+            let score = result.score; // 0 to 4
+            let colorClass = '';
+            let strengthText = '';
+
+            switch (score) {
+                case 0:
+                case 1:
+                    colorClass = 'text-danger';
+                    strengthText = 'Weak';
+                    break;
+                case 2:
+                    colorClass = 'text-warning';
+                    strengthText = 'Moderate';
+                    break;
+                case 3:
+                    colorClass = 'text-info';
+                    strengthText = 'Good';
+                    break;
+                case 4:
+                    colorClass = 'text-success';
+                    strengthText = 'Strong';
+                    break;
+                default:
+                    colorClass = 'text-muted';
+                    strengthText = '';
+            }
+
+            PasswordStrength.innerHTML = `<small class="${colorClass}">${strengthText}</small>`;
+        });
+
+        // User registration
+        let UsernameInp = document.getElementById("usernameInp");
+        let EmailInp = document.getElementById("emailInp");
+        let MainForm = document.getElementById("mainform");
+        let notification = document.getElementById("notification");
+
+        // Function to show notifications
+        let showNotification = (message, isSuccess) => {
+            notification.innerText = message;
+            notification.style.backgroundColor = isSuccess ? '#28a745' : '#dc3545';
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        };
+
+        // Register user function
+        let RegisterUser = evt => {
+            evt.preventDefault();
+            createUserWithEmailAndPassword(auth, EmailInp.value,
+            PasswordInp.value)
+                .then(credentials => {
+                    console.log(credentials);
+                    showNotification('Registration successful!', true);
+                    setTimeout(() => {
+                        window.location.href = "login.en.html";
+
+                    }, 2000);
+                })
+                .catch(error => {
+                    showNotification('Registration failed. Please try again.', false);
+                    console.log(error.code);
+                    console.log(error.message);
+                });
+        };
+
+        MainForm.addEventListener('submit', RegisterUser);
+
+        // Google authentication setup
+        const provider = new GoogleAuthProvider();
+        const googleLogin = document.getElementById("google-btn-login");
+        googleLogin.addEventListener("click", function () {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log(user);
+                    window.location.href = "login.en.html";
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                });
+        });
+    </script>
+
+    <!-- Custom script for additional functionality -->
+    <script src="../Assets/script/register.js"></script>
+</body>
+
+</html>

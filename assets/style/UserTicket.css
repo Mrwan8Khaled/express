@@ -1,0 +1,207 @@
+.ticket-box {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+.ticket-details {
+    margin-bottom: 15px;
+}
+
+.ticket-download {
+    text-align: center;
+}
+
+.btn-download {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: var(--main-color-hover);
+}
+
+.qr-code {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Main Styles */
+main {
+    padding-top: 120px;
+    /* Adjusting the space from the header */
+    text-align: center;
+}
+
+/* Popup Box Styles */
+.popup-box {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.popup-box.active {
+    display: block;
+}
+
+.popup-box p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.popup-box .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.popup-box .btn-container button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.popup-box .btn-container button i {
+    margin-right: 10px;
+}
+
+.popup-box .btn-container button.close-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.popup-box .btn-container button.close-btn:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.popup-box .btn-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Service Box Styles */
+.service-box {
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    /* Centering the elements */
+    text-align: center;
+    background-color: #fff;
+    /* Service box background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.service-box h3 {
+    color: #0d47a1;
+    /* Service title color */
+    margin-bottom: 20px;
+}
+
+.service-box p {
+    color: #555;
+}
+
+.service-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #007bff;
+    /* Service icon color */
+}
+
+/* Custom Back Button Styles */
+.back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #0d47a1;
+    /* Back button color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+.back-btn i {
+    margin-right: 10px;
+}
+
+.back-btn:hover {
+    background-color: #002171;
+    /* Back button hover color */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect */
+.service-box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .service-box {
+        margin-bottom: 20px;
+        /* Reducing the space between items on small screens */
+    }
+}

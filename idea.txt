@@ -1,0 +1,4 @@
+when the clint in the home page or any page from the pages in the header
+that page be hiddin (display: none;)
+
+div dir rtl

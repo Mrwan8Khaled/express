@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Sen', sans-serif;
+    /* Apply Sen font as default */
+}
+
+/* Root Variables */
+:root {
+    --main-color: #1E1D28;
+    /* Main color */
+    --second-color: #E0143F;
+    /* Second color */
+    --main-color-hover: #1e1d2880;
+    /* Main color hover */
+    --background-color: #fff;
+    /* Background color */
+    --font: #e7e7e7;
+    /* Font color */
+    --icon: #E0143F;
+}
+
+/* Body Styles */
+body {
+    background-color: #f8f9fa;
+    position: relative;
+    margin-bottom: 200px;
+    padding-top: 10px;
+}
+
+/* Main Styles */
+main {
+    min-height: 100vb;
+}
+
+button:hover , a:hover {
+    background-color: var(--main-color-hover) !important;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--main-color);
+    position: fixed;
+    top: 10px;
+    height: 50px;
+    width: 95%;
+    z-index: 1000;
+    border-radius: 100px;
+    margin: 0 2.5%;
+    transition: top 0.3s;
+}
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-nav .nav-link p {
+    padding-left: 10px;
+}
+
+.navbar-nav .nav-link i {
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--main-color);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    z-index: 10001;
+    box-shadow: 0 0 20px 0px #4141414d;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer .container span a {
+    color: #fff;
+}
+
+.footer .container div {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer .container div i {
+    color : var(--second-color);
+    font-size: 36px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: var(--main-color);
+    border: none;
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Additional styles */
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: inherit;
+    line-height: 1.2;
+}

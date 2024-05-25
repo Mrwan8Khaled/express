@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mwasalt masr</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-...your-hash-code..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tahoma">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding-bottom: 150px; /* Adjusting the space between content and footer */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #0047AB !important;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #cccccc !important;
+        }
+
+        /* Main Styles */
+        main {
+            padding-top: 120px; /* Adjusting the space from the header */
+            text-align: center;
+        }
+
+        /* Form Styles */
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - 10px);
+            background-position-y: center;
+            padding-right: 30px;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #0d47a1; /* Dark blue footer color */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .vehicle-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.rounded-image {
+    width: 210px; /* تعديل العرض والارتفاع حسب الحاجة */
+    height: 210px;
+    border-radius: 50%; /* جعل الصورة دائرية */
+    object-fit: contain; /* لتقليص الصورة داخل الدائرة */
+    margin: 0 auto; /* تحديد المسافة بين الصور */
+    display: block; /* جعل الصورة تظهر وسط العرض */
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://wasal-feen.web.app">
+                    <img src="/img headr/wasal feen.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://wasal-feen.web.app/service/services.en.html"><i class="fas fa-home"></i> Home</a>
+                     
+                       
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-cogs"></i> Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/track system/track bus or train.en.html"><i class="fas fa-map-marker-alt"></i> Tracking</a></li>
+                                <li><a class="dropdown-item" href="/ticket system/ticket bus or train.en.html"><i class="fas fa-ticket-alt"></i> Tickets</a></li>
+                                <li><a class="dropdown-item" href="/appointments/schedules type.en.html"><i class="far fa-clock"></i> Appointments</a></li>
+                            </ul>
+                        </li>
+                            <!-- Ticket Store Button -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user profile/my ticket.en.html"><i class="fas fa-store-alt"></i> Ticket Store</a>
+                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.en.html"><i class="fas fa-info-circle"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.en.html"><i class="fas fa-envelope"></i> Contact</a>
+                        </li>
+                    
+                    
+                        <!-- Profile Button -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/img headr/user_avatar.png" alt="User Avatar" style="width: 30px; height: 30px; border-radius: 50%;">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown" style="width: 200px;">
+                                <li><a class="dropdown-item" href="/user profile/my ticket.en.html"><i class="fas fa-user"></i> My Account</a></li>
+                                <li><a class="dropdown-item" href="/user profile/setting.en.html"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a class="dropdown-item" href="/user profile/my ticket.en.html"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                                <li><a class="dropdown-item" href="/user profile/operations history.en.html"><i class="fas fa-tasks"></i> Operations History</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="/forms sign/logout.en.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                        <!-- Flags for Language -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.ar.html"><img src="/img headr/egypt_flag.png" alt="Egypt Flag" style="width: 30px; height: 30px;"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.en.html"><img src="/img headr/usa_flag.png" alt="USA Flag" style="width: 30px; height: 30px;"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+    
+        <div class="container">
+            <div class="vehicle-image">
+                <img src="/public bus img/MWASLAT MASR.png" alt="Vehicle Image" class="rounded-image">
+            </div>
+            <div class="form-container">
+                <h2>Purchase Bus Ticket</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="departure">Departure</label>
+                        <select name="departure" id="departure">
+                            <option value="" disabled selected>Select Departure</option>
+                            <option value="Ramses">Ramses</option>
+                            <option value="Downtown">Downtown</option>
+                            <option value="New Cairo">New Cairo</option>
+                            <option value="Maadi">Maadi</option>
+                            <option value="Mohandessin">Mohandessin</option>
+                            <option value="Heliopolis">Heliopolis</option>
+                            <option value="Nasr City">Nasr City</option>
+                            <option value="6th of October">6th of October</option>
+                            <option value="Sheikh Zayed">Sheikh Zayed</option>
+                            <option value="Tagamo'">Tagamo'</option>
+                            <option value="Zamalek">Zamalek</option>
+                            <option value="Shubra">Shubra</option>
+                            <option value="Madinet Nasr">Madinet Nasr</option>
+                            <option value="Abbassiya">Abbassiya</option>
+                            <option value="Mokattam">Mokattam</option>
+                            <option value="Sayeda Zeinab">Sayeda Zeinab</option>
+                            <option value="Rehab City">Rehab City</option>
+                            <option value="Zaytoun">Zaytoun</option>
+                            <option value="Ain Shams">Ain Shams</option>
+                            <option value="Heliopolis Square">Heliopolis Square</option>
+                            <option value="El Darb El Ahmar">El Darb El Ahmar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival">Arrival</label>
+                        <select name="arrival" id="arrival">
+                            <option value="" disabled selected>Select Arrival</option>
+                            <option value="Ramses">Ramses</option>
+                            <option value="Downtown">Downtown</option>
+                            <option value="New Cairo">New Cairo</option>
+                            <option value="Maadi">Maadi</option>
+                            <option value="Mohandessin">Mohandessin</option>
+                            <option value="Heliopolis">Heliopolis</option>
+                            <option value="Nasr City">Nasr City</option>
+                            <option value="6th of October">6th of October</option>
+                            <option value="Sheikh Zayed">Sheikh Zayed</option>
+                            <option value="Tagamo'">Tagamo'</option>
+                            <option value="Zamalek">Zamalek</option>
+                            <option value="Shubra">Shubra</option>
+                            <option value="Madinet Nasr">Madinet Nasr</option>
+                            <option value="Abbassiya">Abbassiya</option>
+                            <option value="Mokattam">Mokattam</option>
+                            <option value="Sayeda Zeinab">Sayeda Zeinab</option>
+                            <option value="Rehab City">Rehab City</option>
+                            <option value="Zaytoun">Zaytoun</option>
+                            <option value="Ain Shams">Ain Shams</option>
+                            <option value="Heliopolis Square">Heliopolis Square</option>
+                            <option value="El Darb El Ahmar">El Darb El Ahmar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <select name="class" id="class">
+                            <option value="" disabled selected>Select Class</option>
+                            <option value="First Class">First Class</option>
+                            <option value="Business Class">Business Class</option>
+                            <option value="Economy Class">Economy Class</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="busNumber">Bus Number</label>
+                        <select name="busNumber" id="busNumber">
+                            <option value="" disabled selected>Select Bus Number</option>
+                            <option value="101">101</option>
+                            <option value="102">102</option>
+                            <option value="103">103</option>
+                            <!-- Add more bus numbers as needed -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Purchase Ticket</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div id="ticket-details" style="display: none;">
+            <h3>Ticket Details</h3>
+            <p>Departure: <span id="departure-details"></span></p>
+            <p>Arrival: <span id="arrival-details"></span></p>
+            <p>Date: <span id="date-details"></span></p>
+            <p>Class: <span id="class-details"></span></p>
+            <p>bus Number: <span id="bus-number-details"></span></p>
+            <p>Seat: <span id="seat-details"></span></p>
+            <p>Payment Method: <span id="payment-method-details"></span></p>
+            <!-- Add any additional details you want to display -->
+        </div>
+
+<!-- Payment Options -->
+<div id="payment-options" style="display: none; margin-bottom: 20px;">
+  <h3>Select Payment Method</h3>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="payment-option">
+              <input type="radio" id="walletPayment" name="paymentMethod" value="Wallet" checked>
+              <label for="walletPayment">
+                  <i class="fas fa-wallet"></i> Wallet
+              </label>
+              <div class="checkmark"></div>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="payment-option">
+              <input type="radio" id="bankPayment" name="paymentMethod" value="Bank">
+              <label for="bankPayment">
+                  <i class="fas fa-university"></i> Bank Transfer
+              </label>
+              <div class="checkmark"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Visa Payment Form -->
+<div id="visaPaymentForm" style="display: none; margin-bottom: 20px;">
+  <h3>Visa Payment Details</h3>
+  <form>
+      <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+      </div>
+      <div class="form-group">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" class="form-control" id="expiryDate" placeholder="Enter expiry date">
+      </div>
+      <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+      </div>
+    </form>
+</div>
+
+<!-- Wallet Payment Form -->
+<div id="walletPaymentForm" style="display: none; margin-bottom: 20px;">
+  <h3>Wallet Payment Details</h3>
+  <form>
+      <div class="form-group">
+          <label for="walletNumber">Wallet Number</label>
+          <input type="text" class="form-control" id="walletNumber" placeholder="Enter wallet number">
+      </div>
+      <div class="form-group">
+          <label for="countryCode">Country Code</label>
+          <select class="form-select" id="countryCode">
+              <option selected>Select country code</option>
+              <option value="1">+1</option>
+              <option value="20">+20</option>
+              <!-- Add more options as needed -->
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+      </div>
+    </form>
+</div>
+
+<!-- Pay Now Button -->
+<div class="text-center" id="payNowButtonContainer" style="display: none; margin-bottom: 20px;">
+  <button id="payNowButton" class="btn-submit" style="display: none;">Pay Now</button>
+</div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // تحديد زر حجز التذكرة
+            const purchaseButton = document.querySelector('.btn-submit');
+    
+            // تحديد عناصر التفاصيل
+            const ticketDetails = document.getElementById('ticket-details');
+            const departureDetails = document.getElementById('departure-details');
+            const arrivalDetails = document.getElementById('arrival-details');
+            const dateDetails = document.getElementById('date-details');
+            const classDetails = document.getElementById('class-details');
+            const trainNumberDetails = document.getElementById('bus-number-details');
+            const seatDetails = document.getElementById('seat-details');
+            const paymentMethodDetails = document.getElementById('payment-method-details');
+    
+            // إضافة استماع للنقر على زر حجز التذكرة
+            purchaseButton.addEventListener('click', function (event) {
+                event.preventDefault(); // منع السلوك الافتراضي للزر
+    
+                // قم بعرض عناصر التفاصيل
+                ticketDetails.style.display = 'block';
+                document.getElementById('payment-options').style.display = 'block';
+    
+                // استرجاع قيم الحقول من النموذج وعرضها
+                const departure = document.getElementById('departure').value;
+                departureDetails.textContent = departure;
+    
+                const arrival = document.getElementById('arrival').value;
+                arrivalDetails.textContent = arrival;
+    
+                const date = document.getElementById('date').value;
+                dateDetails.textContent = date;
+    
+                const ticketClass = document.getElementById('class').value;
+                classDetails.textContent = ticketClass;
+    
+                const trainNumber = document.getElementById('trainNumber').value;
+                trainNumberDetails.textContent = trainNumber;
+    
+                // تخمين المقعد (أفترضت هنا أن المقاعد تكون عبارة عن أرقام)
+                const seat = Math.floor(Math.random() * 100) + 1; // تخمين رقم المقعد بين 1 و 100
+                seatDetails.textContent = seat;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // تحديد زر حجز التذكرة
+    const purchaseButton = document.querySelector('.btn-submit');
+
+    // تحديد عناصر التفاصيل
+    const ticketDetails = document.getElementById('ticket-details');
+    const departureDetails = document.getElementById('departure-details');
+    const arrivalDetails = document.getElementById('arrival-details');
+    const dateDetails = document.getElementById('date-details');
+    const classDetails = document.getElementById('class-details');
+    const trainNumberDetails = document.getElementById('bus-number-details');
+    const seatDetails = document.getElementById('seat-details');
+    const paymentMethodDetails = document.getElementById('payment-method-details');
+
+    // إضافة استماع للنقر على زر حجز التذكرة
+    purchaseButton.addEventListener('click', function (event) {
+        event.preventDefault(); // منع السلوك الافتراضي للزر
+
+        // قم بعرض عناصر التفاصيل
+        ticketDetails.style.display = 'block';
+        document.getElementById('payment-options').style.display = 'block';
+    });
+
+    // تحديث وظيفة عرض زر الدفع والعلامات بعد تحديد طريقة الدفع
+    document.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+            const paymentMethod = this.value;
+            if (paymentMethod === 'Wallet') {
+                document.getElementById('payNowButton').style.display = 'block';
+                document.getElementById('bankConfirmation').style.display = 'none';
+                document.getElementById('walletConfirmation').style.display = 'block';
+            } else if (paymentMethod === 'Bank') {
+                document.getElementById('payNowButton').style.display = 'block';
+                document.getElementById('walletConfirmation').style.display = 'none';
+                document.getElementById('bankConfirmation').style.display = 'block';
+            }
+        });
+    });
+
+    // إضافة استماع للنقر على زر الدفع الآن
+    document.getElementById('payNowButton').addEventListener('click', function () {
+        // هنا يمكنك إضافة السلوك عند النقر على زر الدفع الآن، مثل توجيه المستخدم إلى بوابة الدفع الإلكترونية
+        // window.location.href = 'رابط بوابة الدفع';
+        alert('Redirecting to payment gateway...');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // تحديد زر حجز التذكرة
+    const purchaseButton = document.querySelector('.btn-submit');
+
+    // تحديد عناصر التفاصيل
+    const ticketDetails = document.getElementById('ticket-details');
+    const departureDetails = document.getElementById('departure-details');
+    const arrivalDetails = document.getElementById('arrival-details');
+    const dateDetails = document.getElementById('date-details');
+    const classDetails = document.getElementById('class-details');
+    const trainNumberDetails = document.getElementById('bus-number-details');
+    const seatDetails = document.getElementById('seat-details');
+    const paymentMethodDetails = document.getElementById('payment-method-details');
+
+    // تحديث وظيفة عرض زر الدفع والنماذج بعد تحديد طريقة الدفع
+    document.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+            const paymentMethod = this.value;
+            if (paymentMethod === 'Wallet') {
+                document.getElementById('visaPaymentForm').style.display = 'none';
+                document.getElementById('walletPaymentForm').style.display = 'block';
+            } else if (paymentMethod === 'Bank') {
+                document.getElementById('walletPaymentForm').style.display = 'none';
+                document.getElementById('visaPaymentForm').style.display = 'block';
+            }
+            document.getElementById('payNowButtonContainer').style.display = 'block';
+        });
+    });
+
+    // إضافة استماع للنقر على زر الدفع الآن
+    document.getElementById('payNowButton').addEventListener('click', function () {
+        // هنا يمكنك إضافة السلوك عند النقر على زر الدفع الآن، مثل توجيه المستخدم إلى بوابة الدفع الإلكترونية
+        // window.location.href = 'رابط بوابة الدفع';
+        alert('Redirecting to payment gateway...');
+    });
+});
+
+
+    </script>
+  
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-...your-hash-code..." crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+/* Main Styles */
+main {
+    padding-top: 120px;
+    /* Adjusting the space from the header */
+    text-align: center;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+    padding-right: 30px;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.vehicle-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rounded-image {
+    width: 210px;
+    /* تعديل العرض والارتفاع حسب الحاجة */
+    height: 210px;
+    border-radius: 50%;
+    /* جعل الصورة دائرية */
+    object-fit: contain;
+    /* لتقليص الصورة داخل الدائرة */
+    margin: 0 auto;
+    /* تحديد المسافة بين الصور */
+    display: block;
+    /* جعل الصورة تظهر وسط العرض */
+}
+
+.form-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.form-switch input {
+    display: none;
+}
+
+.form-switch label {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-switch label:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.form-switch input:checked+label {
+    background-color: #007bff;
+}
+
+.form-switch input:checked+label:before {
+    left: 22px;
+}

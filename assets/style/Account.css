@@ -1,0 +1,87 @@
+/* Main Styles */
+main {
+    padding-top: 120px;
+    /* Adjusting the space from the header */
+    text-align: center;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+    padding-right: 30px;
+}
+
+.btn-submit {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--main-color-hover);
+}
+
+.vehicle-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rounded-image {
+    width: 210px;
+    /* تعديل العرض والارتفاع حسب الحاجة */
+    height: 210px;
+    border-radius: 50%;
+    /* جعل الصورة دائرية */
+    object-fit: contain;
+    /* لتقليص الصورة داخل الدائرة */
+    margin: 0 auto;
+    /* تحديد المسافة بين الصور */
+    display: block;
+    /* جعل الصورة تظهر وسط العرض */
+}
+
+.upload input {
+    display: none;
+}
+
+.upload label {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px dashed black;
+}
